@@ -8,14 +8,14 @@ local Players = game:GetService("Players");
 
 -- // Variables
 local Answer = ReplicatedStorage:FindFirstChild("Answer");
-
 local Event = Instance.new("BindableEvent");
+
+-- // Loops 
 RunService:BindToRenderStep("PhoneSpam", 1, function() 
     task.wait(getgenv().SpamDelay or 1)
     Event:Fire();
 end);
 
--- // Main loop
 RunService.PostSimulation:Connect(function(deltaTime) 
     for i = 1, #Players:GetPlayers() do 
         task.wait();
