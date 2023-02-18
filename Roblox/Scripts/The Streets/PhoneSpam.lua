@@ -7,7 +7,7 @@ local RunService = game:GetService("RunService");
 local Players = game:GetService("Players");
 
 -- // Variables
-local Answer = ReplicatedStorage:FindFirstChild("Answer");
+local Answer = ReplicatedStorage:FindFirstChild("Answer", true);
 local Event = Instance.new("BindableEvent");
 
 -- // Connections 
