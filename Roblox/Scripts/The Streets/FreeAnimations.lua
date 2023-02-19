@@ -1,3 +1,5 @@
+-- // This script will allow you to have the animations locked behind a gamepass, without having to purchase the gamepasses
+
 getgenv().AnimationToChangeTo = "Zombie" -- // All animations you can change to: {"Psycho", "Retro", "Sassy", "Tough", "Zombie"}
 if not game:IsLoaded() then game.Loaded:Wait(); end
 
