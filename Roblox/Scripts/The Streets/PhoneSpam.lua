@@ -12,15 +12,20 @@ local Players = game:GetService("Players");
 local Client = Players.LocalPlayer
 
 local Remotes = ReplicatedStorage:FindFirstChild("Remotes");
+local Call = Remotes:FindFirstChild("Call");
 local Answer = Remotes:FindFirstChild("Answer");
+local HangUp = Remotes:FindFirstChild("HangUp");
 
 -- // Connections
-RunService.PostSimulation:Connect(function(deltaTime) 
+RunService.PostSimulation:Connect(function() 
     for i = 1, #Players:GetPlayers() do     
         local Player = Players:GetPlayers()[i];
         if Player == Client then continue end 
-    
-        Answer:FireServer(Player);
-        task.wait(getgenv().SpamDelay or 3)
+        
+        Call:FireServer(Player);
+        Answer:FireServer(Client);
+        HangUp:FireServer(Client);
+
+        task.wait(getgenv().SpamDelay);
     end
 end);
